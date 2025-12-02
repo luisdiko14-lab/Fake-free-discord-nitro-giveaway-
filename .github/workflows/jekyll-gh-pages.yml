@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
+  contents: read, write
+  pages: write, read
   id-token: write
 
 concurrency:
@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest   # Build must run on Linux for container action
 
     steps:
       - name: Checkout
@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
-          name: github-pages-${{ github.run_id }}   # Unique artifact name
+          name: github-pages-${{ github.run_id }}  # Unique artifact name
 
   deploy:
     environment:
@@ -48,7 +48,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: github-pages-${{ github.run_id }}  # Must match uploaded name
+          name: github-pages-${{ github.run_id }}  # Match uploaded name
           path: ./_site
 
       - name: Deploy to GitHub Pages
