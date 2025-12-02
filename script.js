@@ -48,6 +48,7 @@ checkBtn.addEventListener('click', () => {
 
 claimBtn.addEventListener('click', () => {
   alert('Nice! But this was a prank — do NOT trust unknown claim links. Stay safe!');
+  alert('But you can dm luisthegoat7301 in discord');
 });
 
 document.getElementById('codeInput').addEventListener('keydown', (e) => {
