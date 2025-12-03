@@ -10,14 +10,14 @@ btn.addEventListener("click", () => {
   body.textContent = "Validating entry...";
 
   setTimeout(() => {
-    const win = Math.random() < 0.2; // 20% win chance
+    const win = Math.random() < 0.50;
 
     if (win) {
       status.className = "status win";
       status.textContent = "✓";
       title.textContent = "Winner!";
       body.textContent = "You won the giveaway. A moderator will contact you.";
-      alert("great job you won!, not"
+      alert("Great job! You won!");
     } else {
       status.className = "status lose";
       status.textContent = "✕";
