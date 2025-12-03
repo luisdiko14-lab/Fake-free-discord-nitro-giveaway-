@@ -1,3 +1,4 @@
+alert("You have a 50% chance to win! you can click the button as many times you want!");
 const btn = document.getElementById("checkBtn");
 const status = document.getElementById("status");
 const title = document.getElementById("messageTitle");
@@ -10,7 +11,7 @@ btn.addEventListener("click", () => {
   body.textContent = "Validating entry...";
 
   setTimeout(() => {
-    const win = Math.random() < 0.50;
+    const win = Math.random() < 0.2; // 20% win chance
 
     if (win) {
       status.className = "status win";
