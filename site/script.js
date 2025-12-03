@@ -17,6 +17,7 @@ btn.addEventListener("click", () => {
       status.textContent = "✓";
       title.textContent = "Winner!";
       body.textContent = "You won the giveaway. A moderator will contact you.";
+      alert("great job you won!, not"
     } else {
       status.className = "status lose";
       status.textContent = "✕";
